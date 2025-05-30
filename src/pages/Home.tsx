@@ -9,14 +9,21 @@ const projects = [
 
 const Home: React.FC = () => {
   return (
-    <div className="min-h-screen bg-gray-100 p-6">
-      <h1 className="text-7xl text-gray-800 font-bold mb-6 text-center">Min Portefølje</h1>
+  <div className="bg-white text-gray-900 dark:bg-gray-900 dark:text-white">
+      <h1 className="text-7xl text-gray-800 dark:text-white font-bold mb-6 text-center">
+        Min Portefølje
+      </h1>
+
       <div className="grid gap-6 md:grid-cols-3">
         {projects.map((project) => (
           <Link to={`/project/${project.id}`} key={project.id}>
-            <div className="bg-white rounded-2xl shadow p-4 hover:shadow-lg transition cursor-pointer">
-              <h2 className="text-xl font-semibold">{project.title}</h2>
-              <p className="text-gray-600 mt-2">{project.description}</p>
+            <div className="bg-white dark:bg-gray-800 dark:border dark:border-gray-700 rounded-2xl shadow p-4 hover:shadow-lg transition cursor-pointer">
+              <h2 className="text-xl font-semibold text-gray-900 dark:text-white">
+                {project.title}
+              </h2>
+              <p className="text-gray-600 dark:text-gray-300 mt-2">
+                {project.description}
+              </p>
             </div>
           </Link>
         ))}
