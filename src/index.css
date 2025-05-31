@@ -1,13 +1,9 @@
 
-@import "tailwindcss"; 
+@import "tailwindcss";
 
+@custom-variant dark (&:where(.dark, .dark *));
 
 @layer base {
-
-  *, *::before, *::after {
-    box-sizing: border-box;
-  }
-
   html, body {
     margin: 0;
     padding: 0;
@@ -16,11 +12,9 @@
     transition: background-color .2s, color .2s;
   }
 
-
-  .html.dark, .html.dark body {
-    background-color: #111827; 
+  html.dark,
+  html.dark body {
+    background-color: #111827;
     color: #ffffff;
   }
 }
-
-

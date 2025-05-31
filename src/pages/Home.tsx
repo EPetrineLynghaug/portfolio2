@@ -9,7 +9,7 @@ const projects = [
 
 const Home: React.FC = () => {
   return (
-  <div className="bg-white text-gray-900 dark:bg-gray-900 dark:text-white">
+    <div className="bg-white text-gray-900 dark:bg-gray-900 dark:text-white">
       <h1 className="text-7xl text-gray-800 dark:text-white font-bold mb-6 text-center">
         Min Portefølje
       </h1>
