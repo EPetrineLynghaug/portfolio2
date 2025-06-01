@@ -1,56 +1,92 @@
-// src/components/Navbar.tsx
-import React, { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
+
+import React, { useState } from 'react';
 import { FiMenu, FiSun, FiMoon } from 'react-icons/fi';
+import { useTheme } from '../../hooks/useTheme';
 
-const Navbar: React.FC = () => {
+export interface NavLink {
+  to: string;
+  label: string;
+}
+
+export interface NavbarProps {
+  /**
+   * Merkevare‐lenke (for eksempel logo eller tekst).
+   * Dersom ikke oppgitt, bruker vi en standard.
+   */
+  brand?: {
+    to: string;
+    label: string;
+  };
+  /**
+   * Liste over navigasjonslenker.
+   * Dersom ikke oppgitt, vises en tom liste.
+   */
+  links?: NavLink[];
+  /**
+   * Komponent som brukes for lenker (for eksempel React Router sin <Link>).
+   * Props: to, children, onClick?, className?.
+   * Hvis denne ikke gis, brukes fallback: <a href="…">.
+   */
+  LinkComponent?: React.ComponentType<{
+    to: string;
+    children: React.ReactNode;
+    onClick?: () => void;
+    className?: string;
+  }>;
+}
+
+const defaultBrand = { to: '/', label: 'MyPortfolio' };
+const defaultLinks: NavLink[] = [
+  { to: '/', label: 'Home' },
+  { to: '/projects', label: 'Projects' },
+];
+
+const Navbar: React.FC<NavbarProps> = ({
+  brand = defaultBrand,
+  links = defaultLinks,
+  LinkComponent = ({ to, children, onClick, className }) => (
+    <a href={to} onClick={onClick} className={className}>
+      {children}
+    </a>
+  ),
+}) => {
   const [menuOpen, setMenuOpen] = useState(false);
-
-  // Vi bruker en funksjon for å initialisere `isDark` fra localStorage eller OS-preferanse
-  const [isDark, setIsDark] = useState<boolean>(() => {
-    const stored = localStorage.getItem('theme');
-    if (stored) return stored === 'dark';
-    // Fallback: OS dark-mode
-    return window.matchMedia('(prefers-color-scheme: dark)').matches;
-  });
-
-  useEffect(() => {
-    const root = document.documentElement; // <html>
-    if (isDark) {
-      root.classList.add('dark');
-      localStorage.setItem('theme', 'dark');
-    } else {
-      root.classList.remove('dark');
-      localStorage.setItem('theme', 'light');
-    }
-  }, [isDark]);
+  const { isDark, toggle } = useTheme();
 
   return (
     <nav className="bg-white dark:bg-gray-900 shadow-md px-4 py-3 sticky top-0 z-50 transition-all">
       <div className="flex justify-between items-center max-w-6xl mx-auto">
-        <Link to="/" className="text-xl font-bold text-gray-800 dark:text-white">
-          MyPortfolio
-        </Link>
+        <LinkComponent
+          to={brand.to}
+          className="text-xl font-bold text-gray-800 dark:text-white"
+        >
+          {brand.label}
+        </LinkComponent>
 
-        {/* Desktop-meny (vises bare på md+) */}
+        {/* Desktop‐meny */}
         <div className="hidden md:flex gap-6 text-gray-700 dark:text-gray-200 font-medium">
-          <Link to="/" className="hover:text-blue-500">Home</Link>
-          <Link to="/projects" className="hover:text-blue-500">Projects</Link>
+          {links.map(({ to, label }) => (
+            <LinkComponent key={to} to={to} className="hover:text-blue-500">
+              {label}
+            </LinkComponent>
+          ))}
         </div>
 
         <div className="flex items-center gap-4">
-          {/* Dark‐modus-toggle */}
+          {/* Theme‐toggle‐knapp */}
           <button
-            onClick={() => setIsDark(prev => !prev)}
+            type="button"
+            onClick={toggle}
             className="text-xl text-gray-600 dark:text-gray-300 hover:text-black dark:hover:text-white transition"
             title="Toggle theme"
           >
             {isDark ? <FiSun /> : <FiMoon />}
           </button>
 
-          {/* Hamburger-ikon for mobil */}
+          {/* Hamburger for mobil */}
           <button
-            onClick={() => setMenuOpen(prev => !prev)}
+            type="button"
+            onClick={() => setMenuOpen((prev) => !prev)}
             className="md:hidden text-2xl text-gray-800 dark:text-white focus:outline-none"
             aria-label="Toggle menu"
           >
@@ -59,11 +95,19 @@ const Navbar: React.FC = () => {
         </div>
       </div>
 
-      {/* Mobil-meny, animert med Framer Motion om ønskelig */}
+      {/* Mobil‐meny */}
       {menuOpen && (
         <div className="md:hidden mt-3 flex flex-col gap-3 text-gray-800 dark:text-gray-200 font-medium px-2">
-          <Link to="/" onClick={() => setMenuOpen(false)} className="hover:text-blue-500">Home</Link>
-          <Link to="/projects" onClick={() => setMenuOpen(false)} className="hover:text-blue-500">Projects</Link>
+          {links.map(({ to, label }) => (
+            <LinkComponent
+              key={to}
+              to={to}
+              onClick={() => setMenuOpen(false)}
+              className="hover:text-blue-500"
+            >
+              {label}
+            </LinkComponent>
+          ))}
         </div>
       )}
     </nav>
