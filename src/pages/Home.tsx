@@ -1,12 +1,13 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
-import Hero from '../components/Hero'; 
+import React from 'react'
+import { Link } from 'react-router-dom'
+import Hero from '../components/Hero'
+import bidyImage from '../assets/img/bidy/Bidy.png'
 
 interface Project {
-  id: number;
-  title: string;
-  description: string;
-  imageUrl: string;
+  id: number
+  title: string
+  description: string
+  imageUrl: string
 }
 
 const projects: Project[] = [
@@ -14,58 +15,61 @@ const projects: Project[] = [
     id: 1,
     title: 'Holidaze',
     description: 'A holiday booking platform with destination overviews and user reviews.',
-    imageUrl: 'https://via.placeholder.com/300x200?text=Holidaze',
+    imageUrl: 'https://via.placeholder.com/800x600?text=Holidaze',
   },
   {
     id: 2,
     title: 'Ecom',
-    description: 'An e-commerce dashboard for managing products and orders efficiently.',
-    imageUrl: 'https://via.placeholder.com/300x200?text=Ecom',
+    description: 'An e-commerce dashboard for managing products og orders efficiently.',
+    imageUrl: 'https://via.placeholder.com/800x600?text=Ecom',
   },
   {
     id: 3,
     title: 'Bidy',
-    description: 'A real-time bidding platform for auctions with live updates.',
-    imageUrl: 'https://via.placeholder.com/300x200?text=Bidy',
+    description: 'A real-time bidding platform for auctions med live updates.',
+    imageUrl: bidyImage,
   },
-];
+]
 
 const Home: React.FC = () => {
   return (
-    <div className="bg-white text-gray-900 dark:bg-gray-900 dark:text-white">
-      {/* Hero-seksjonen ligger øverst */}
+    <div className="min-h-screen bg-white dark:bg-gray-900 text-gray-900 dark:text-white">
       <Hero />
-
-      <div className="max-w-6xl mx-auto px-4 py-8">
-        <div className="grid gap-6 md:grid-cols-3">
+      <main className="w-full py-12">
+        <h1 className="text-4xl font-bold text-blue-800 dark:text-blue-300 mb-12 text-center">
+          Projects
+        </h1>
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
           {projects.map((project) => (
-            <div
+            <article
               key={project.id}
-              className="bg-white dark:bg-gray-800 dark:border dark:border-gray-700 rounded-2xl shadow p-4 hover:shadow-lg transition flex flex-col"
+              className="w-full rounded-xl shadow bg-gray-50 dark:bg-gray-800 overflow-hidden"
             >
               <img
                 src={project.imageUrl}
                 alt={`${project.title} screenshot`}
-                className="w-full h-48 object-cover rounded-lg mb-4"
+                className="w-full h-auto"
               />
-              <h2 className="text-xl font-semibold text-gray-900 dark:text-white mb-2">
-                {project.title}
-              </h2>
-              <p className="text-gray-600 dark:text-gray-300 mt-2 flex-grow">
-                {project.description}
-              </p>
-              <Link
-                to={`/project/${project.id}`}
-                className="mt-4 inline-block px-4 py-2 bg-blue-500 dark:bg-blue-600 text-white dark:text-gray-200 rounded-lg hover:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-400 transition-colors text-center"
-              >
-                Read More
-              </Link>
-            </div>
+              <div className="p-6">
+                <h2 className="text-2xl font-semibold text-blue-700 dark:text-blue-300 mb-3">
+                  {project.title}
+                </h2>
+                <p className="text-gray-700 dark:text-gray-300 mb-5">
+                  {project.description}
+                </p>
+                <Link
+                  to={`/projects/${project.id}`}
+                  className="inline-block px-5 py-2 bg-gradient-to-r from-blue-500 to-indigo-500 hover:from-blue-600 hover:to-indigo-600 text-white font-semibold rounded-lg shadow-md transition duration-150"
+                >
+                  Read more →
+                </Link>
+              </div>
+            </article>
           ))}
         </div>
-      </div>
+      </main>
     </div>
-  );
-};
+  )
+}
 
-export default Home;
+export default Home
