@@ -2,7 +2,7 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 import Hero from '../components/Hero'
 import bidyImage from '../assets/img/bidy/Bidy.png'
-
+import essenzaImage from '../assets/img/essenza/essenza.webp'
 interface Project {
   id: number
   title: string
@@ -21,7 +21,7 @@ const projects: Project[] = [
     id: 2,
     title: 'Ecom',
     description: 'An e-commerce dashboard for managing products og orders efficiently.',
-    imageUrl: 'https://via.placeholder.com/800x600?text=Ecom',
+    imageUrl: essenzaImage,
   },
   {
     id: 3,

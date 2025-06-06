@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import { FiMenu, FiSun, FiMoon } from 'react-icons/fi';
 import { useTheme } from '../../hooks/useTheme';
@@ -9,24 +8,11 @@ export interface NavLink {
 }
 
 export interface NavbarProps {
-  /**
-   * Merkevare‐lenke (for eksempel logo eller tekst).
-   * Dersom ikke oppgitt, bruker vi en standard.
-   */
   brand?: {
     to: string;
     label: string;
   };
-  /**
-   * Liste over navigasjonslenker.
-   * Dersom ikke oppgitt, vises en tom liste.
-   */
   links?: NavLink[];
-  /**
-   * Komponent som brukes for lenker (for eksempel React Router sin <Link>).
-   * Props: to, children, onClick?, className?.
-   * Hvis denne ikke gis, brukes fallback: <a href="…">.
-   */
   LinkComponent?: React.ComponentType<{
     to: string;
     children: React.ReactNode;
@@ -36,9 +22,12 @@ export interface NavbarProps {
 }
 
 const defaultBrand = { to: '/', label: 'MyPortfolio' };
+
 const defaultLinks: NavLink[] = [
   { to: '/', label: 'Home' },
   { to: '/projects', label: 'Projects' },
+  { to: '/about', label: 'About' },
+  { to: '/contact', label: 'Contact' },
 ];
 
 const Navbar: React.FC<NavbarProps> = ({

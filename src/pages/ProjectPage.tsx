@@ -1,7 +1,9 @@
 import React from 'react'
 import { Link, useParams } from 'react-router-dom'
 import Bidy from './Bidy'
+import Essenza from './Essenza'
 import bidyImage from '../assets/img/bidy/Bidy.png'
+import essenzaImage from '../assets/img/essenza/essenza.webp'
 
 interface Project {
   id: number
@@ -19,14 +21,14 @@ const projects: Project[] = [
   },
   {
     id: 2,
-    title: 'Ecom',
-    description: 'An e-commerce dashboard for managing products og orders efficiently.',
-    imageUrl: 'https://via.placeholder.com/800x600?text=Ecom',
+    title: 'Essenza',
+    description: 'An e-commerce site built in one week, using Zustand and custom hooks for state and form validation.',
+    imageUrl: essenzaImage,
   },
   {
     id: 3,
     title: 'Bidy',
-    description: 'A real-time bidding platform for auctions med live updates.',
+    description: 'A real-time bidding platform for auctions with live updates.',
     imageUrl: bidyImage,
   },
 ]
@@ -79,13 +81,21 @@ const ProjectPage: React.FC = () => {
 
   if (!projectEntry) {
     return (
-      <div className="p-6">
-        <h2 className="text-xl font-semibold">Prosjekt ikke funnet</h2>
-        <p>Vennligst sjekk at du har oppgitt riktig ID.</p>
+      <div className="p-6 text-gray-800 dark:text-gray-100">
+        <h2 className="text-xl font-semibold">Project not found</h2>
+        <p>Please check that the URL contains a valid project ID.</p>
+        <Link
+          to="/projects"
+          className="mt-4 inline-block px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700 transition"
+        >
+          ← Back to projects
+        </Link>
       </div>
     )
   }
-
+if (numericId === 2) {
+  return <Essenza />
+}
   if (numericId === 3) {
     return <Bidy />
   }
@@ -109,7 +119,7 @@ const ProjectPage: React.FC = () => {
             to="/projects"
             className="inline-block px-5 py-2 bg-gradient-to-r from-blue-500 to-indigo-500 hover:from-blue-600 hover:to-indigo-600 text-white font-semibold rounded-lg shadow-md transition duration-150"
           >
-            ← Tilbake til prosjekter
+            ← Back to projects
           </Link>
         </div>
       </div>
