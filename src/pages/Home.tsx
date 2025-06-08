@@ -3,6 +3,8 @@ import { Link } from 'react-router-dom'
 import Hero from '../components/Hero'
 import bidyImage from '../assets/img/bidy/Bidy.png'
 import essenzaImage from '../assets/img/essenza/essenza.webp'
+import holidazeImage from '../assets/img/holidaze/Holidaze-Portfolio.png'
+
 interface Project {
   id: number
   title: string
@@ -15,7 +17,7 @@ const projects: Project[] = [
     id: 1,
     title: 'Holidaze',
     description: 'A holiday booking platform with destination overviews and user reviews.',
-    imageUrl: 'https://via.placeholder.com/800x600?text=Holidaze',
+    imageUrl: holidazeImage,
   },
   {
     id: 2,
@@ -43,23 +45,23 @@ const Home: React.FC = () => {
           {projects.map((project) => (
             <article
               key={project.id}
-              className="w-full rounded-xl shadow bg-gray-50 dark:bg-gray-800 overflow-hidden"
+              className="w-full rounded-xl shadow bg-gray-50 dark:bg-gray-800 overflow-hidden flex flex-col"
             >
               <img
                 src={project.imageUrl}
                 alt={`${project.title} screenshot`}
-                className="w-full h-auto"
+                className="w-full h-48 object-cover"
               />
-              <div className="p-6">
+              <div className="p-6 flex-1 flex flex-col">
                 <h2 className="text-2xl font-semibold text-blue-700 dark:text-blue-300 mb-3">
                   {project.title}
                 </h2>
-                <p className="text-gray-700 dark:text-gray-300 mb-5">
+                <p className="text-gray-700 dark:text-gray-300 mb-4 flex-1">
                   {project.description}
                 </p>
                 <Link
                   to={`/projects/${project.id}`}
-                  className="inline-block px-5 py-2 bg-gradient-to-r from-blue-500 to-indigo-500 hover:from-blue-600 hover:to-indigo-600 text-white font-semibold rounded-lg shadow-md transition duration-150"
+                  className="mt-auto inline-block px-5 py-2 bg-gradient-to-r from-blue-500 to-indigo-500 hover:from-blue-600 hover:to-indigo-600 text-white font-semibold rounded-lg shadow-md transition duration-150"
                 >
                   Read more →
                 </Link>

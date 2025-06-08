@@ -1,21 +1,23 @@
-
+ // @ts-ignore: Allow importing JPG files without type declarations
 import React from 'react';
+import heroImage from '../assets/img/about/heroimage.jpg';
 
 const Hero: React.FC = () => {
   return (
-    <section className="bg-gradient-to-r from-indigo-500 to-purple-600 dark:from-gray-800 dark:to-gray-900 text-white transition-colors">
-      <div className="max-w-4xl mx-auto px-4 py-20 text-center">
+    <section className="relative text-white transition-colors flex items-end justify-center min-h-[70vh] md:min-h-screen">
+      {/* Full-bleed background image */}
+      <div className="absolute inset-0">
         <img
-          src="https://via.placeholder.com/150?text=Petrine"
+          src={heroImage}
           alt="Portrait of Petrine"
-          className="w-36 h-36 rounded-full mx-auto mb-6"
+          className="w-full h-full object-cover"
         />
-        <h1 className="text-4xl md:text-5xl font-semibold mb-4">
+      </div>
+      {/* Content positioned lower with responsive padding */}
+      <div className="relative p-6 md:p-12">
+        <h1 className="text-4xl md:text-5xl font-semibold">
           Hi, I'm Petrine — creating user-friendly, responsive websites.
         </h1>
-        <h2 className="text-2xl md:text-3xl font-light mb-6 text-indigo-200 dark:text-gray-400">
-          My Portfolio
-        </h2>
       </div>
     </section>
   );
