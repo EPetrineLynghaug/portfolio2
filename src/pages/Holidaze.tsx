@@ -6,7 +6,7 @@ import LR from '../assets/img/holidaze/LR.png'
 
 const Holidaze: React.FC = () => {
   return (
-    <div className="min-h-screen bg-white dark:bg-gray-900 px-8 pt-0 max-w-6xl mx-auto" role="main">
+    <div className="min-h-screen bg-gray-50 dark:bg-gray-900 px-8 pt-0 max-w-6xl mx-auto" role="main">
       {/* Hero Section */}
       <div className="w-full h-96 lg:h-[32rem] -mt-6 mb-12 overflow-hidden rounded-2xl">
         <img

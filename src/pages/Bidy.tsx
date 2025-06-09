@@ -6,7 +6,7 @@ import performanceImage from '../assets/img/bidy/Preformance.png'
 
 const Bidy: React.FC = () => {
   return (
-    <div className="min-h-screen bg-white dark:bg-gray-900 px-6 pt-0 max-w-4xl mx-auto" role="main">
+    <div className="min-h-screen bg-gray-50 dark:bg-gray-900 px-6 pt-0 max-w-4xl mx-auto" role="main">
       {/* Hero Section */}
       <div className="w-full h-80 md:h-96 lg:h-[32rem] -mt-6 mb-8 overflow-hidden rounded-lg">
         <img

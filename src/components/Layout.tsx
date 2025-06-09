@@ -2,6 +2,7 @@
 import React from 'react';
 import { Outlet } from 'react-router-dom';
 import Navbar from './navigation/Navbar';
+import Footer from './Footer'; 
 
 const Layout: React.FC = () => {
   return (
@@ -10,6 +11,7 @@ const Layout: React.FC = () => {
       <main className="max-w-5xl mx-auto px-4 py-6">
         <Outlet />
       </main>
+          <Footer />
     </div>
   );
 };

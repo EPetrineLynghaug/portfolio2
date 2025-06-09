@@ -43,7 +43,7 @@ const Navbar: React.FC<NavbarProps> = ({
   const { isDark, toggle } = useTheme();
 
   return (
-    <nav className="bg-white dark:bg-gray-900 shadow-md px-4 py-3 sticky top-0 z-50 transition-all">
+    <nav className="bg-gray-50 dark:bg-gray-900 shadow-md px-4 py-3 sticky top-0 z-50 transition-all">
       <div className="flex justify-between items-center max-w-6xl mx-auto">
         <LinkComponent
           to={brand.to}
