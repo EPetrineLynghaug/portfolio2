@@ -25,7 +25,7 @@ const Contact: React.FC = () => {
         <li className="flex items-center gap-3">
           <FiGithub className="text-xl text-blue-600 dark:text-blue-400" />
           <a
-            href="https://github.com/USERNAME"
+            href="https://github.com/EPetrineLynghaug"
             target="_blank"
             rel="noopener noreferrer"
             className="hover:underline"
@@ -36,7 +36,7 @@ const Contact: React.FC = () => {
         <li className="flex items-center gap-3">
           <FiLinkedin className="text-xl text-blue-600 dark:text-blue-400" />
           <a
-            href="https://linkedin.com/in/USERNAME"
+            href="https://www.linkedin.com/in/elisabeth-petrine-lynghaug-69653229b/"
             target="_blank"
             rel="noopener noreferrer"
             className="hover:underline"
