@@ -1,23 +1,23 @@
- // @ts-ignore: Allow importing JPG files without type declarations
 import React from 'react';
+// @ts-ignore: Allow importing JPG files without type declarations
 import heroImage from '../assets/img/about/heroimage.jpg';
 
 const Hero: React.FC = () => {
   return (
-    <section className="relative text-white transition-colors flex items-end justify-center min-h-[70vh] md:min-h-screen">
-      {/* Full-bleed background image */}
-      <div className="absolute inset-0">
+    <section className="relative text-white flex justify-center">
+      {/* Image container with fixed aspect ratio and overlay */}
+      <div className="relative w-full max-w-4xl aspect-video">
         <img
           src={heroImage}
           alt="Portrait of Petrine"
-          className="w-full h-full object-cover"
+          className="w-full h-full object-cover rounded-2xl object-center"
         />
-      </div>
-      {/* Content positioned lower with responsive padding */}
-      <div className="relative p-6 md:p-12">
-        <h1 className="text-4xl md:text-5xl font-semibold">
-          Hi, I'm Petrine — creating user-friendly, responsive websites.
-        </h1>
+        {/* Text overlay positioned at the bottom of the image */}
+        <div className="absolute bottom-0 left-0 z-10 w-full bg-gradient-to-t from-black/70 to-transparent p-4 md:p-8">
+          <h1 className="text-xl md:text-4xl font-semibold">
+         Hi, I’m Petrine <br /> I shape ideas with code.
+          </h1>
+        </div>
       </div>
     </section>
   );
