@@ -49,7 +49,7 @@ A modern, performant, and developer-friendly personal portfolio template built w
 
 ###  Project Structure
 
-```bash
+  ```bash
     portfolio2/
 ├─ src/
 │  ├─ assets/
@@ -75,4 +75,5 @@ A modern, performant, and developer-friendly personal portfolio template built w
 │  │   ├─ Home.tsx
 │  │   └─ ProjectPage.tsx
 
-```
+  ```
+  
