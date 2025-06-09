@@ -1,54 +1,78 @@
-# React + TypeScript + Vite
+# Portfolio Project
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+![npm (scoped)](https://img.shields.io/npm/v/portfolio2?color=blue)  
+![License](https://img.shields.io/badge/license-MIT-blue)
 
-Currently, two official plugins are available:
+A modern, performant, and developer-friendly personal portfolio template built with React, TypeScript, and Vite. This setup offers hot module replacement (HMR), fast builds, and a solid ESLint configuration to help you showcase your work with confidence.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+---
 
-## Expanding the ESLint configuration
+## 🚀 Features
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+- **Vite-powered** for lightning-fast dev server and optimized builds  
+- **TypeScript support** with zero-config setup  
+- **React 18** with functional components and hooks  
+- **Fast Refresh** via either Babel or SWC plugin  
+- **ESLint** with recommended and type-checked rules  
+- **Optional plugin support** for `react-x` and `react-dom` linting rules  
 
-```js
-export default tseslint.config({
-  extends: [
-    // Remove ...tseslint.configs.recommended and replace with this
-    ...tseslint.configs.recommendedTypeChecked,
-    // Alternatively, use this for stricter rules
-    ...tseslint.configs.strictTypeChecked,
-    // Optionally, add this for stylistic rules
-    ...tseslint.configs.stylisticTypeChecked,
-  ],
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
+---
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+## 📦 Getting Started
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+### Prerequisites
 
-export default tseslint.config({
-  plugins: {
-    // Add the react-x and react-dom plugins
-    'react-x': reactX,
-    'react-dom': reactDom,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended typescript rules
-    ...reactX.configs['recommended-typescript'].rules,
-    ...reactDom.configs.recommended.rules,
-  },
-})
+- Node.js v16 or newer  
+- npm v8 or newer (or Yarn)  
+
+### Installation
+
+1. Clone the repo:  
+   ```bash
+   git clone https://github.com/your-username/portfolio2.git
+   cd portfolio2
+
+   ```
+
+2. Install dependencies:
+  ```bash 
+  npm install
+  ```
+
+3. Scripts
+  ```bash
+* npm run dev — Start development server with HMR
+* npm run build — Compile TypeScript and bundle for production
+* npm run preview — Preview the production build locally
+* npm run lint — Run ESLint on all source files   
+    ```
+
+###  Project Structure
+
+```bash
+    portfolio2/
+├─ src/
+│  ├─ assets/
+│  │   ├─ img/          # Image assets
+│  │   ├─ favicon.png   # Site favicon
+│  │   └─ react.svg     # Logo or icon files
+│  ├─ components/      # Reusable React components
+│  │   ├─ navigation/   # Navigation-specific components
+│  │   │   └─ Navbar.tsx
+│  │   ├─ BackButton.tsx
+│  │   ├─ Footer.tsx
+│  │   ├─ Hero.tsx
+│  │   ├─ Layout.tsx
+│  │   └─ LinkedInEmbed.tsx
+│  ├─ hooks/           # Custom React hooks
+│  │   └─ useTheme.ts
+│  ├─ pages/           # Page-level components/routes
+│  │   ├─ About.tsx
+│  │   ├─ Bidy.tsx
+│  │   ├─ Contact.tsx
+│  │   ├─ Essenza.tsx
+│  │   ├─ Holidaze.tsx
+│  │   ├─ Home.tsx
+│  │   └─ ProjectPage.tsx
+
 ```
