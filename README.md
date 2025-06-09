@@ -1,10 +1,16 @@
-# Portfolio Project
+<h1 align="center">
+  Portfolio Project
+  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/typescript/typescript-original.svg" alt="TypeScript logo" height="28" />
+  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/vite/vite-original.svg" alt="Vite logo" height="28" />
+  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/react/react-original.svg" alt="React logo" height="28" />
+</h1>
 
-
-
-A modern, performant, and developer-friendly personal portfolio template built with React, TypeScript, and Vite. This setup offers hot module replacement (HMR), fast builds, and a solid ESLint configuration to help you showcase your work with confidence.
+A modern, performant, and developer-friendly personal portfolio template built with **React 18**, **TypeScript**, and **Vite**.  
+Enjoy instant Hot-Module Replacement (HMR), lightning-fast builds, and a solid ESLint setup so you can showcase your work with confidence.
 
 ---
+
+
 
 ##  Features
 
@@ -74,4 +80,6 @@ npm install
 │  │   └─ ProjectPage.tsx
 
   ```
+
+  ![Live preview of the portfolio site](src/assets/LR.png)
   
