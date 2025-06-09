@@ -37,7 +37,7 @@ A modern, performant, and developer-friendly personal portfolio template built w
   ```
 
 3. Scripts
-  ```bash
+```bash
   * npm run dev  — Start development server with HMR
   * npm run build — Compile TypeScript and bundle for production
   * npm run preview — Preview the production build locally
@@ -45,6 +45,7 @@ A modern, performant, and developer-friendly personal portfolio template built w
 ```
 
 ---
+
 ###  Project Structure
 
 ```bash
