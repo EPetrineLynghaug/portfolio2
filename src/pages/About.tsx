@@ -5,15 +5,16 @@ import { SiTailwindcss, SiTypescript, SiRust, SiFigma } from 'react-icons/si';
 
 const About: React.FC = () => {
   const skills = [
-    { Icon: FaHtml5, name: 'HTML5', color: 'bg-orange-500', percent: 90 },
-    { Icon: FaCss3Alt, name: 'CSS3', color: 'bg-blue-500', percent: 85 },
-    { Icon: SiFigma, name: 'Figma', color: 'bg-pink-400', percent: 80 },
-    { Icon: FaJs, name: 'JavaScript', color: 'bg-yellow-400', percent: 75 },
-    { Icon: SiTailwindcss, name: 'Tailwind CSS', color: 'bg-teal-400', percent: 70 },
-    { Icon: FaReact, name: 'React', color: 'bg-blue-400', percent: 65 },
-    { Icon: SiTypescript, name: 'TypeScript', color: 'bg-blue-600', percent: 50 },
-    { Icon: SiRust, name: 'Rust', color: 'bg-red-700', percent: 45 },
-    { Icon: FaAngular, name: 'Angular', color: 'bg-red-600', percent: 60 },
+    { Icon: FaHtml5, name: 'HTML5', color: 'bg-orange-500', percent: 99 },
+    { Icon: FaCss3Alt, name: 'CSS3', color: 'bg-blue-500', percent: 99 },
+    { Icon: SiFigma, name: 'Figma', color: 'bg-pink-400', percent: 99 },
+    { Icon: FaJs, name: 'JavaScript', color: 'bg-yellow-400', percent: 99 },
+    { Icon: SiTailwindcss, name: 'Tailwind CSS', color: 'bg-teal-400', percent: 89 },
+    { Icon: FaReact, name: 'React', color: 'bg-blue-400', percent: 89 },
+     { Icon: FaAngular, name: 'Angular', color: 'bg-red-600', percent: 70 },
+    { Icon: SiTypescript, name: 'TypeScript', color: 'bg-blue-600', percent: 20 },
+    { Icon: SiRust, name: 'Rust', color: 'bg-red-700', percent: 20 },
+
   ];
 
   return (
@@ -33,7 +34,7 @@ const About: React.FC = () => {
         </div>
 
         {/* Image section */}
-        <div className="md:w-1/2 w-full h-64 md:h-72 lg:h-96 overflow-hidden rounded-2xl mt-8 md:mt-0">
+        <div className="md:w-1/2 w-full h-80 md:h-72 lg:h-96 overflow-hidden rounded-2xl mt-8 md:mt-0">
           <img
             src={Heroimg}
             alt="Petrine in action"
