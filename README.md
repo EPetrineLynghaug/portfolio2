@@ -1,24 +1,21 @@
 # Portfolio Project
 
-![npm (scoped)](https://img.shields.io/npm/v/portfolio2?color=blue)  
-![License](https://img.shields.io/badge/license-MIT-blue)
+
 
 A modern, performant, and developer-friendly personal portfolio template built with React, TypeScript, and Vite. This setup offers hot module replacement (HMR), fast builds, and a solid ESLint configuration to help you showcase your work with confidence.
 
 ---
 
-## 🚀 Features
+##  Features
 
 - **Vite-powered** for lightning-fast dev server and optimized builds  
 - **TypeScript support** with zero-config setup  
 - **React 18** with functional components and hooks  
-- **Fast Refresh** via either Babel or SWC plugin  
 - **ESLint** with recommended and type-checked rules  
-- **Optional plugin support** for `react-x` and `react-dom` linting rules  
+  
 
----
 
-## 📦 Getting Started
+##  Getting Started
 
 ### Prerequisites
 
@@ -45,11 +42,12 @@ A modern, performant, and developer-friendly personal portfolio template built w
 * npm run build — Compile TypeScript and bundle for production
 * npm run preview — Preview the production build locally
 * npm run lint — Run ESLint on all source files   
- ```
+  ```
 
+---
 ###  Project Structure
 
-  ```bash
+```bash
     portfolio2/
 ├─ src/
 │  ├─ assets/
