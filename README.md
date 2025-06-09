@@ -36,13 +36,13 @@ A modern, performant, and developer-friendly personal portfolio template built w
    npm install
   ```
 
-3. Scripts
-```bash
-  * npm run dev  — Start development server with HMR
-  * npm run build — Compile TypeScript and bundle for production
-  * npm run preview — Preview the production build locally
-  * npm run lint — Run ESLint on all source files   
-```
+3. Scripts:
+  ``` bash
+    * npm run dev  — Start development server with HMR
+    * npm run build — Compile TypeScript and bundle for production
+    * npm run preview — Preview the production build locally
+    * npm run lint — Run ESLint on all source files   
+  ```
 
 ---
 
