@@ -21,7 +21,7 @@ export interface NavbarProps {
   }>;
 }
 
-const defaultBrand = { to: '/', label: 'MyPortfolio' };
+const defaultBrand = { to: '/', label: 'Petrine´s Portfolio' };
 
 const defaultLinks: NavLink[] = [
   { to: '/', label: 'Home' },
