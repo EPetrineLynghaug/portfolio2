@@ -25,23 +25,22 @@ A modern, performant, and developer-friendly personal portfolio template built w
 ### Installation
 
 1. Clone the repo:  
-   ```bash
-   git clone https://github.com/your-username/portfolio2.git
-   cd portfolio2
-
-   ```
+```bash
+git clone https://github.com/your-username/portfolio2.git
+cd portfolio2
+```
 
 2. Install dependencies:
-   ```bash 
-   npm install
-  ```
+```bash 
+npm install
+```
 
 3. Scripts:
-
-    * npm run dev  — Start development server with HMR
-    * npm run build — Compile TypeScript and bundle for production
-    * npm run preview — Preview the production build locally
-    * npm run lint — Run ESLint on all source files   
+```bash
+ * npm run dev  — Start development server with HMR
+ * npm run build — Compile TypeScript and bundle for production
+ * npm run preview — Preview the production build locally
+ * npm run lint — Run ESLint on all source files   
   ```
 
 ---
